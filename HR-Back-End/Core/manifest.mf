@@ -1,0 +1,5 @@
+Manifest-Version: 1.0
+OpenIDE-Module: com.inkubator.hrbackend
+OpenIDE-Module-Localizing-Bundle: com/inkubator/hrbackend/Bundle.properties
+OpenIDE-Module-Specification-Version: 1.0
+
