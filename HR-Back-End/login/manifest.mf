@@ -1,5 +1,7 @@
 Manifest-Version: 1.0
 OpenIDE-Module: com.inkubator.hrbanckend.login
+OpenIDE-Module-Install: com/inkubator/hrbanckend/login/Installer.class
+OpenIDE-Module-Layer: com/inkubator/hrbanckend/login/layer.xml
 OpenIDE-Module-Localizing-Bundle: com/inkubator/hrbanckend/login/Bundle.properties
 OpenIDE-Module-Specification-Version: 1.0
 
