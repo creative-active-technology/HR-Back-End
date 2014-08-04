@@ -1,0 +1,5 @@
+Manifest-Version: 1.0
+OpenIDE-Module: com.inkubator.hrbanckend.login
+OpenIDE-Module-Localizing-Bundle: com/inkubator/hrbanckend/login/Bundle.properties
+OpenIDE-Module-Specification-Version: 1.0
+
