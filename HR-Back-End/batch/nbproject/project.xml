@@ -3,7 +3,7 @@
     <type>org.netbeans.modules.apisupport.project</type>
     <configuration>
         <data xmlns="http://www.netbeans.org/ns/nb-module-project/3">
-            <code-name-base>com.inkubator.hrbanckend.login</code-name-base>
+            <code-name-base>com.inkubator.hrbanckend.batch</code-name-base>
             <suite-component/>
             <module-dependencies>
                 <dependency>
@@ -12,22 +12,6 @@
                     <compile-dependency/>
                     <run-dependency>
                         <specification-version>1.0</specification-version>
-                    </run-dependency>
-                </dependency>
-                <dependency>
-                    <code-name-base>org.openide.awt</code-name-base>
-                    <build-prerequisite/>
-                    <compile-dependency/>
-                    <run-dependency>
-                        <specification-version>7.59.1</specification-version>
-                    </run-dependency>
-                </dependency>
-                <dependency>
-                    <code-name-base>org.openide.dialogs</code-name-base>
-                    <build-prerequisite/>
-                    <compile-dependency/>
-                    <run-dependency>
-                        <specification-version>7.32.1</specification-version>
                     </run-dependency>
                 </dependency>
                 <dependency>
@@ -48,6 +32,10 @@
                 </dependency>
             </module-dependencies>
             <public-packages/>
+            <class-path-extension>
+                <runtime-relative-path>ext/spring-tx-3.2.6.RELEASE.jar</runtime-relative-path>
+                <binary-origin>release/modules/ext/spring-tx-3.2.6.RELEASE.jar</binary-origin>
+            </class-path-extension>
         </data>
     </configuration>
 </project>

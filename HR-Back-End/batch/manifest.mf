@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+OpenIDE-Module: com.inkubator.hrbanckend.batch
+OpenIDE-Module-Install: com/inkubator/hrbanckend/batch/Installer.class
+OpenIDE-Module-Localizing-Bundle: com/inkubator/hrbanckend/batch/Bundle.properties
+OpenIDE-Module-Specification-Version: 1.0
+

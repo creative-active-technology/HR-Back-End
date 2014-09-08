@@ -3,21 +3,46 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package com.inkubator.hrbanckend.login;
+
+import com.inkubator.common.util.HashingUtils;
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
+import org.openide.util.Exceptions;
 
 /**
  *
  * @author Deni Husni FR
  */
 public class LoginForm extends javax.swing.JPanel {
-
     /**
      * Creates new form LoginForm
      */
     public LoginForm() {
+        try {
+            UIManager.setLookAndFeel(
+                    UIManager.getSystemLookAndFeelClassName());
+
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException ex) {
+            Exceptions.printStackTrace(ex);
+        }
         initComponents();
     }
+
+    public String getUserId() {
+        return userId.getText();
+    }
+
+    public String getPassword() {
+        return HashingUtils.getHashSHA256(new String(password.getPassword()));
+    }
+
+     public void setInfo(String msg) {
+      loginInfo.setText(msg);
+   }
+   
+ 
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -28,30 +53,122 @@ public class LoginForm extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        userId = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        password = new javax.swing.JPasswordField();
+        loginInfo = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
 
-        org.openide.awt.Mnemonics.setLocalizedText(jButton1, org.openide.util.NbBundle.getMessage(LoginForm.class, "LoginForm.jButton1.text")); // NOI18N
+        setBackground(new java.awt.Color(204, 255, 204));
+        setLayout(new java.awt.BorderLayout());
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(221, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addGap(186, 186, 186))
+        jPanel2.setPreferredSize(new java.awt.Dimension(150, 200));
+        jPanel2.setLayout(new java.awt.BorderLayout());
+
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/inkubator/hrbanckend/login/logo_login.png"))); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel2, org.openide.util.NbBundle.getMessage(LoginForm.class, "LoginForm.jLabel2.text")); // NOI18N
+        jLabel2.setMinimumSize(new java.awt.Dimension(100, 128));
+        jLabel2.setPreferredSize(new java.awt.Dimension(100, 128));
+        jPanel2.add(jLabel2, java.awt.BorderLayout.CENTER);
+
+        add(jPanel2, java.awt.BorderLayout.WEST);
+
+        jLabel1.setFont(new java.awt.Font("Trebuchet MS", 1, 11)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 51, 102));
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel1, org.openide.util.NbBundle.getMessage(LoginForm.class, "LoginForm.jLabel1.text")); // NOI18N
+
+        userId.setFont(new java.awt.Font("Trebuchet MS", 0, 11)); // NOI18N
+        userId.setText(org.openide.util.NbBundle.getMessage(LoginForm.class, "LoginForm.userId.text")); // NOI18N
+        userId.setToolTipText(org.openide.util.NbBundle.getMessage(LoginForm.class, "LoginForm.userId.toolTipText")); // NOI18N
+
+        jLabel3.setFont(new java.awt.Font("Trebuchet MS", 1, 11)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(0, 51, 102));
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel3, org.openide.util.NbBundle.getMessage(LoginForm.class, "LoginForm.jLabel3.text")); // NOI18N
+
+        password.setFont(new java.awt.Font("Trebuchet MS", 0, 11)); // NOI18N
+        password.setText(org.openide.util.NbBundle.getMessage(LoginForm.class, "LoginForm.password.text")); // NOI18N
+        password.setToolTipText(org.openide.util.NbBundle.getMessage(LoginForm.class, "LoginForm.password.toolTipText")); // NOI18N
+
+        loginInfo.setForeground(new java.awt.Color(255, 0, 0));
+        org.openide.awt.Mnemonics.setLocalizedText(loginInfo, org.openide.util.NbBundle.getMessage(LoginForm.class, "LoginForm.loginInfo.text")); // NOI18N
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel1))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(userId, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
+                            .addComponent(password)))
+                    .addComponent(loginInfo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(194, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addGap(83, 83, 83))
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(userId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
+                .addComponent(loginInfo))
         );
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/inkubator/hrbanckend/login/inkuba_logo-07.png"))); // NOI18N
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel4, org.openide.util.NbBundle.getMessage(LoginForm.class, "LoginForm.jLabel4.text")); // NOI18N
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(41, Short.MAX_VALUE))
+        );
+
+        add(jPanel1, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JLabel loginInfo;
+    private javax.swing.JPasswordField password;
+    private javax.swing.JTextField userId;
     // End of variables declaration//GEN-END:variables
 }
